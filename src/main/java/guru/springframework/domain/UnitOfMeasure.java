@@ -20,7 +20,7 @@ public class UnitOfMeasure implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String uom;
+	private String description;
 
 	public Long getId() {
 		return id;
@@ -30,12 +30,12 @@ public class UnitOfMeasure implements Serializable {
 		this.id = id;
 	}
 
-	public String getUom() {
-		return uom;
+	public String getdescription() {
+		return description;
 	}
 
-	public void setUom(String uom) {
-		this.uom = uom;
+	public void setdescription(String description) {
+		this.description = description;
 	}
 
 }
