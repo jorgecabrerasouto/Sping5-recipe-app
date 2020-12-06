@@ -20,6 +20,7 @@ import javax.persistence.JoinColumn;
 import guru.springframework.domain.Notes;
 import guru.springframework.domain.Ingredient;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -41,7 +42,9 @@ public class Recipe implements Serializable {
 	private Integer servings;
 	private String source;
 	private String url;
+	@Lob
 	private String directions;
+	
 	@Enumerated(value=EnumType.STRING)
 	private Difficulty difficulty;
 
@@ -55,16 +58,16 @@ public class Recipe implements Serializable {
 	@JoinTable(name = "recipe_category",
 			joinColumns = @JoinColumn(name = "recipe_id"), 
 			inverseJoinColumns = @JoinColumn(name = "category_id"))
-	private Set<Category> categories;
+	private Set<Category> categories= new HashSet<>();
 	
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "recipe")
-	private Set<Ingredient> ingredients;
+	private Set<Ingredient> ingredients = new HashSet<>();
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -154,10 +157,6 @@ public class Recipe implements Serializable {
 
 	public void setIngredients(Set<Ingredient> ingredients) {
 		this.ingredients = ingredients;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Set<Category> getCategories() {

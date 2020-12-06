@@ -13,7 +13,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import guru.springframework.domain.Ingredient;
-import guru.springframework.domain.UnitOfMeasure;
 
 @Entity
 @Table(name = "Ingredient")
@@ -24,15 +23,24 @@ public class Ingredient implements Serializable {
 	public Ingredient() {
 	}
 
+	public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+		super();
+		this.description = description;
+		this.amount = amount;
+		this.uom = uom;
+		this.recipe = recipe;
+	}
+
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String description;
 	private BigDecimal amount;
-	private UnitOfMeasure uom;
 
 	@OneToOne(fetch = FetchType.EAGER)
-	private UnitOfMeasure unitOfMeasure;
+	private UnitOfMeasure uom;
 
 	@ManyToOne
 	private Recipe recipe;
@@ -59,14 +67,6 @@ public class Ingredient implements Serializable {
 
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
-	}
-
-	public UnitOfMeasure getUnitOfMeasure() {
-		return unitOfMeasure;
-	}
-
-	public void setUnitOfMeasure(UnitOfMeasure param) {
-		this.unitOfMeasure = param;
 	}
 
 	public Recipe getRecipe() {
