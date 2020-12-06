@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package guru.springframework.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import guru.springframework.domain.Ingredient;
+import guru.springframework.model.Ingredient;
 
 @Entity
 @Table(name = "Ingredient")

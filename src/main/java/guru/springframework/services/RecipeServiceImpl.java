@@ -5,7 +5,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import guru.springframework.domain.Recipe;
+import guru.springframework.model.Recipe;
 import guru.springframework.repositories.RecipeRepository;
 @Service
 public class RecipeServiceImpl implements RecipeService{

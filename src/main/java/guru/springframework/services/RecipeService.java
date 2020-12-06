@@ -2,7 +2,7 @@ package guru.springframework.services;
 
 import java.util.Set;
 
-import guru.springframework.domain.Recipe;
+import guru.springframework.model.Recipe;
 
 public interface RecipeService {
 	

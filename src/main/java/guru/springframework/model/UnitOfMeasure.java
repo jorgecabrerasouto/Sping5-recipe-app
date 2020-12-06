@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package guru.springframework.model;
 
 import java.io.Serializable;
 

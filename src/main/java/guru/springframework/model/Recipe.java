@@ -1,4 +1,4 @@
-package guru.springframework.domain;
+package guru.springframework.model;
 
 import java.io.Serializable;
 
@@ -14,11 +14,12 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import guru.springframework.model.Ingredient;
+import guru.springframework.model.Notes;
+
 import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
-
-import guru.springframework.domain.Notes;
-import guru.springframework.domain.Ingredient;
 
 import java.util.HashSet;
 import java.util.Set;
