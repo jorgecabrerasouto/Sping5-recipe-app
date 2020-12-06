@@ -23,6 +23,14 @@ public class Ingredient implements Serializable {
 	public Ingredient() {
 	}
 
+	
+	public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
+		super();
+		this.description = description;
+		this.amount = amount;
+		this.uom = uom;
+	}
+
 	public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
 		super();
 		this.description = description;
@@ -30,8 +38,6 @@ public class Ingredient implements Serializable {
 		this.uom = uom;
 		this.recipe = recipe;
 	}
-
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
