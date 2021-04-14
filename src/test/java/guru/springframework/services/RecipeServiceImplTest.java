@@ -30,7 +30,7 @@ public class RecipeServiceImplTest {
 	}	
 
 	@Test
-	public void testGetRecipes() {
+	public void GetRecipes() throws Exception{
 		
 		Recipe recipe = new Recipe();
 		HashSet<Recipe> recipesData = new HashSet<Recipe>();
